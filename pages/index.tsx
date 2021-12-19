@@ -18,7 +18,7 @@ const Home: NextPage = () => {
 
     useEffect(() => {
         setConfig(exampleConfig)
-    })
+    }, [])
 
     const cardOpenCallback = (q: GameQuestion, categoryName: string) => {
         const _config = config
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
     return <div className={styles.wrapper}>
         <Head>
             <style>
-                @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+                @import url(&apos;https://fonts.googleapis.com/css2?family=Pacifico&display=swap&apos;);
             </style>
         </Head>
 
