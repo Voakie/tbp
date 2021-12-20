@@ -1,4 +1,5 @@
 {
+    "__note": "Schema for this JSON can be found in types.ts. This __note property is just fyi and can be removed",
     "categories": [
         {
             "color": "#4287f5",

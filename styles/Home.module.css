@@ -28,20 +28,23 @@
   padding: 20px;
   background: rgb(247, 247, 247);
   margin: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow:rgba(180, 180, 180, .5) 0 0 20px;
   border: 1px solid lightgrey;
   font-family: 'Pacifico', cursive;
+  cursor: pointer;
 }
 
 .question:nth-child(4) {
   font-size: 48px;
   color: #8c8c8ccc;
+  text-shadow: #c7c7c7cc 2px 2px 0px;
 }
 
 .question:nth-child(5) {
   font-size: 56px;
   color: #ceb219;
+  text-shadow: #d3c835cc 2px 2px 0px;
 }
 
 .question.used {
