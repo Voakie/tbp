@@ -31,7 +31,7 @@ export function ConfigDialog(props: ConfigDialogProps) {
         {error != "" ? <div className={styles.configDialogError}>{error}</div> : null}
         <div>Hier kann eine Konfigurationsdatei im JSON-Format hochgeladen werden</div>
         <br/>
-        <a href="https://github.com/Voakie/tbp/blob/main/exampleConfig.json" target="_blank">Beispiel</a>
+        <a href="https://github.com/Voakie/tbp/blob/main/exampleConfig.json" target="_blank" rel="noreferrer">Beispiel</a>
         <br/>
         <br/>
 
