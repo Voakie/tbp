@@ -1,6 +1,6 @@
-import { MathJax, MathJaxContext } from "better-react-mathjax";
-import { useState } from "react";
-import { GameQuestion } from "../types";
+import { MathJax, MathJaxContext } from "better-react-mathjax"
+import { useState } from "react"
+import { GameQuestion } from "../types"
 import styles from '../styles/Home.module.css'
 
 interface CardProps {

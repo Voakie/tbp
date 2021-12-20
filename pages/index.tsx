@@ -1,27 +1,24 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Category } from '../components/Category'
-import { exampleConfig } from '../exampleConfig'
 import styles from '../styles/Home.module.css'
 import { GameConfig, GameQuestion } from '../types'
 import { Card } from '../components/Card'
+import { ConfigDialog } from '../components/ConfigDialog'
 
 /**
  * TODO: Implement custom config loading instead of always using the example configuration
  */
 
 const Home: NextPage = () => {
-    const [config, setConfig] = useState<GameConfig>({ categories: [] })
-    const [configLoaded, setConfigLoaded] = useState(false)
+    const [config, setConfig] = useState<GameConfig | null>(null)
     const [questionActive, setQuestionActive] = useState<GameQuestion | null>(null)
-
-    useEffect(() => {
-        setConfig(exampleConfig)
-    }, [])
 
     const cardOpenCallback = (q: GameQuestion, categoryName: string) => {
         const _config = config
+        if (!_config) return
+
         const category = _config.categories.find(c => c.name == categoryName)
         if (category) {
             const question = category.questions.find(_q => _q.id == q.id)
@@ -37,6 +34,18 @@ const Home: NextPage = () => {
         setQuestionActive(null)
     }
 
+    const renderContent = () => {
+        if (config == null) {
+            return <ConfigDialog setConfigCallback={setConfig} />
+        } else if (questionActive) {
+            return <Card {...questionActive} closeCallback={cardCloseCallback} />
+        } else {
+            return config.categories.map(c =>
+                <Category key={c.name} {...c} cardOpenCallback={cardOpenCallback} />
+            )
+        }
+    }
+
     return <div className={styles.wrapper}>
         <Head>
             <style>
@@ -44,11 +53,7 @@ const Home: NextPage = () => {
             </style>
         </Head>
 
-        {questionActive != null ? 
-        (<Card {...questionActive} closeCallback={cardCloseCallback} />) : 
-        config.categories.map(c =>
-            <Category key={c.name} {...c} cardOpenCallback={cardOpenCallback} />
-        )}
+        {renderContent()}
     </div>
 }
 
