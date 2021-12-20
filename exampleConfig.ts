@@ -26,8 +26,8 @@ export const exampleConfig: GameConfig = {
                 },
                 {
                     points: 400,
-                    text: "Gib die kontextfreie Grammatik der Sprache \\( L = \\{ Repr_2(i) \\mid i \\text{ mod } 2 = 0 \\} \\setminus \\{\\textcolor{blue}{10}\\} \\) an. \\((i \\in \\mathbb{N})\\)",
-                    solution: "\\(G = (\\{S, A\\}, \\{\\textcolor{blue}{0}, \\textcolor{blue}{1}\\}, S, P)\\) mit $$P = \\{ S \\rightarrow A\\textcolor{blue}{100} \\mid A\\textcolor{blue}{110} \\mid A\\textcolor{blue}{00}, A \\rightarrow A\\textcolor{blue}{0} \\mid A\\textcolor{blue}{1} \\mid \\varepsilon \\}$$",
+                    text: "Gib die kontextfreie Grammatik der Sprache \\( L = \\{ Repr_2(i) \\mid i \\text{ mod } 2 = 0 \\} \\setminus \\{\\textcolor{blue}{0}\\} \\) an. \\((i \\in \\mathbb{N}_0)\\). Führende Nullen seien egal",
+                    solution: "\\(G = (\\{S, A, B\\}, \\{\\textcolor{blue}{0}, \\textcolor{blue}{1}\\}, S, P)\\) mit $$P = \\{ S \\rightarrow A\\textcolor{blue}{0}, A \\rightarrow A\\textcolor{blue}{0} \\mid B\\textcolor{blue}{1}, B \\rightarrow B\\textcolor{blue}{0} \\mid B\\textcolor{blue}{1} \\mid \\varepsilon \\}$$",
                     id: "1:4"
                 }
             ]
@@ -81,7 +81,7 @@ export const exampleConfig: GameConfig = {
                 {
                     points: 300,
                     text: "Gib die Sprache aller Wörter an, die das Teilwort \\(\\textcolor{blue}{meta}\\) nicht enthalten, wobei gilt \\(A = \\{ \\textcolor{blue}{m}, \\textcolor{blue}{e}, \\textcolor{blue}{t}, \\textcolor{blue}{a} \\}\\)",
-                    solution: "\\( L = A^* \\setminus \\{ w \\mid w \\in A^* \\cdot \\{ \\textcolor{blue}{meta} \\} \\cdot A^* \\}  \\)",
+                    solution: "\\( L = A^* \\setminus (A^* \\cdot \\{ \\textcolor{blue}{meta} \\} \\cdot A^*)  \\)",
                     id: "3:3"
                 },
                 {
