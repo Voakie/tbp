@@ -2,6 +2,7 @@ import { MathJax, MathJaxContext } from "better-react-mathjax"
 import { useState } from "react"
 import { GameQuestion } from "../types"
 import styles from '../styles/Home.module.css'
+import { CodeBlock } from "react-code-blocks"
 
 interface CardProps {
     closeCallback: () => void
@@ -24,14 +25,24 @@ export function Card(props: GameQuestion & CardProps) {
             <MathJaxContext>
                 <MathJax>{props.text}</MathJax>
             </MathJaxContext>
+            {props.code && props.code.question ? (
+                <div className={styles.cardCode}>
+                    <CodeBlock text={props.code?.question} language={props.code?.language} />
+                </div>
+            ) : null}
 
-            <br/>
+            <br />
 
             {showSolution ? (<div>
                 <div><b>Antwort:</b></div>
                 <MathJaxContext>
                     <MathJax inline={true} dynamic={true}>{props.solution}</MathJax>
                 </MathJaxContext>
+                {props.code && props.code.answer ? (
+                    <div className={styles.cardCode}>
+                        <CodeBlock text={props.code?.answer} language={props.code?.language} />
+                    </div>
+                ) : null}
             </div>) : null}
         </div>
 

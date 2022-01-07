@@ -14,4 +14,11 @@ export interface GameQuestion {
     text: string
     solution: string
     used?: boolean
+    code?: GameQuestionCode
+}
+
+export interface GameQuestionCode {
+    question?: string
+    answer?: string
+    language: string
 }
