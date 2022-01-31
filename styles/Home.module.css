@@ -35,13 +35,13 @@
   cursor: pointer;
 }
 
-.question:nth-child(4) {
+.question:nth-last-child(2) {
   font-size: 48px;
   color: #8c8c8ccc;
   text-shadow: #c7c7c7cc 2px 2px 0px;
 }
 
-.question:nth-child(5) {
+.question:nth-last-child(1) {
   font-size: 56px;
   color: #ceb219;
   text-shadow: #d3c835cc 2px 2px 0px;

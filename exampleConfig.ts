@@ -23,12 +23,6 @@ export const exampleConfig: GameConfig = {
                     text: "Gib eine formale Sprache (formal korrekt in Mengenschreibweise) an, die nicht kontextfrei ist",
                     solution: "\\(L_{vv} = \\{ v\\textcolor{blue}{c}v \\mid v \\in \\{\\textcolor{blue}{a}, \\textcolor{blue}{b}\\}^* \\}\\)",
                     id: "1:3"
-                },
-                {
-                    points: 400,
-                    text: "Gib die kontextfreie Grammatik der Sprache \\( L = \\{ Repr_2(i) \\mid i \\text{ mod } 2 = 0 \\} \\setminus \\{\\textcolor{blue}{0}\\} \\) an. \\((i \\in \\mathbb{N}_0)\\). Führende Nullen seien egal",
-                    solution: "\\(G = (\\{S, A, B\\}, \\{\\textcolor{blue}{0}, \\textcolor{blue}{1}\\}, S, P)\\) mit $$P = \\{ S \\rightarrow A\\textcolor{blue}{0}, A \\rightarrow A\\textcolor{blue}{0} \\mid B\\textcolor{blue}{1}, B \\rightarrow B\\textcolor{blue}{0} \\mid B\\textcolor{blue}{1} \\mid \\varepsilon \\}$$",
-                    id: "1:4"
                 }
             ]
         },
